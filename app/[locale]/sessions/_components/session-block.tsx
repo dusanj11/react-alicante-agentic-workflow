@@ -19,11 +19,19 @@ export function SessionBlock({ session, top, height }: SessionBlockProps) {
         height={`${height}px`}
       >
         <SurfaceCard>
-          <Text fontWeight="medium" color="var(--text-primary)" truncate>
+          <Text
+            fontWeight="medium"
+            color="var(--text-primary)"
+            lineHeight="1"
+            truncate
+          >
             {session.title}
           </Text>
-          <Text color="var(--text-muted)" truncate>
+          <Text color="var(--text-muted)" lineHeight="1" truncate>
             {session.startTime} · {session.speaker}
+          </Text>
+          <Text color="var(--text-muted)" lineHeight="1" truncate>
+            {session.level.charAt(0).toUpperCase() + session.level.slice(1)}
           </Text>
         </SurfaceCard>
       </Box>
