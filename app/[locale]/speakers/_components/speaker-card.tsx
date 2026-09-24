@@ -21,13 +21,15 @@ export function SpeakerCard({
         <CardTitle fontSize="md">{speaker}</CardTitle>
       </CardHeader>
       <CardContent>
-        <Flex direction="column" gap="2">
+        <Flex as="ul" direction="column" gap="2" listStyleType="none">
           {sessions.map((session) => (
-            <Link key={session.id} href={`/sessions/${session.id}`}>
-              <Text fontSize="sm" color="var(--text-muted)">
-                {session.title} · {session.startTime}
-              </Text>
-            </Link>
+            <li key={session.id}>
+              <Link href={`/sessions/${session.id}`}>
+                <Text fontSize="sm" color="var(--text-secondary)">
+                  {session.title} · {session.startTime}
+                </Text>
+              </Link>
+            </li>
           ))}
         </Flex>
       </CardContent>
